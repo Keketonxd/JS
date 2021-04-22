@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+
+<body>
+    <div id="message"></div>
+    <!-- Понимаю, что лучше писать этот скрипт отдельно и подключать, просто чтобы не было много файлов разных) -->
+    <script>
+        let id = 0;
+        let total_price = 0;
+        let result = 0;
+
+        function cart_add(title, price, quantity) {
+            this.id = id++;
+            this.title = title;
+            this.price = price;
+            this.quantity = quantity;
+            this.total_price = price * quantity;
+            result += price * quantity
+        }
+
+        const your_cart = [];
+
+        your_cart.push(
+            new cart_add('cars', 123, 3)
+        )
+        your_cart.push(
+            new cart_add('lego', 400, 1)
+        )
+        your_cart.push(
+            new cart_add('dolls', 15, 10)
+        )
+
+        var message = ""
+        if (your_cart.length == 0) {
+            document.getElementById("message").innerHTML = "Корзина пуста";
+        } else {
+            document.getElementById("message").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

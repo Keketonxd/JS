@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <script>
+            // инициализацю подукрал, потому что не до конца понял, теперь разобрался, но доску рисовал сам
+            var container = document.querySelector(".container");
+            container.style.width = "500px";
+            container.style.height = "500px";
+            container.style.margin = "0 auto";
+            container.style.display = "flex";
+            container.style.flexWrap = "wrap";
+
+            function my_initiation() {
+                var cell = document.createElement("div");
+                cell.className = "cell";
+                cont.append(cell);
+                cell.style.width = "50px";
+                cell.style.height = "50px";
+                cell.style.margin = "0px";
+                cell.style.padding = "0px";
+                cell.style.textAlign = "center";
+                cell.style.verticalAlign = "middle"; // почему-то не выравнивает по вертикали
+            }
+            window.onload = my_initiation;
+
+            for (var n = 0; n < 100; n++) {
+                window.onload = my_initiation();
+            };
+
+            var board = document.querySelectorAll(".cell");
+
+            letters = [" ", "A", "B", "C", "D", "E", "F", "G", "H", " "];
+
+            // размечаем всю доску
+            for (var k = 1; k <= 8; k++) {
+                // проверяем номер строки
+                if (k % 2 == 0) {
+                    for (var i = 1; i <= 8; i++) {
+                        // размечаем ячейки
+                        if (i % 2 == 0) {
+                            board[k * 10 + i].style.background = "white"
+                        } else {
+                            board[k * 10 + i].style.background = "black"
+                        }
+                    }
+                } else {
+                    // в другом порядке
+                    for (var i = 1; i <= 8; i++) {
+                        if (i % 2 == 0) {
+                            board[k * 10 + i].style.background = "black"
+                        } else {
+                            board[k * 10 + i].style.background = "white"
+                        }
+                    }
+                }
+
+            }
+
+            // Размечаем поля
+            for (var i = 0; i < 10; i++) {
+                board[i].innerHTML = letters[i]
+            }
+            for (var i = 90; i < 100; i++) {
+                board[i].innerHTML = letters[i - 90]
+            }
+            for (var i = 10; i < 90; i += 10) {
+                board[i].innerHTML = i / 10
+            }
+            for (var i = 19; i < 90; i += 10) {
+                board[i].innerHTML = (i - 9) / 10
+            }
+
+
+        </script>
+    </div>
+
+
+</body>
+
+</html>
