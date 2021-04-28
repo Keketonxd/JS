@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #popup {
+            position: fixed;
+            width: 1000px;
+            text-align: center;
+            padding: 10px;
+            background-color: aqua;
+            top: 20px;
+            left: calc(50% - 500px);
+            display: none;
+        }
+
+        #delivery {
+            display: none;
+        }
+
+        .delivery {
+            height: 200px;
+            width: 300px;
+            padding: 10px;
+            font-size: medium;
+        }
+
+        #comment {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cart"></div>
+
+    <div id="goods-list"><button class="next">Далее</button></div>
+
+    <div id="popup"></div>
+
+    <div id="delivery"><input class="delivery" type="text" required placeholder="Адрес доставки"></input>
+        <button class="next">Далее</button>
+    </div>
+    <div id="comment"><input class="delivery" type="text" required placeholder="Комментарий"></input>
+        <button class="next">Заказать</button>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>
