@@ -1,0 +1,42 @@
+А. 
+if (!("a" in window)) {
+    var a = 1;
+} alert(a);
+
+undefinded, потому что a так и не инициализируется
+
+B. 
+var b = function a(x) {
+    x && a(x);
+}; alert(a);
+
+ошибка, потому что не верный синтаксис
+
+C. 
+
+function a(x) {
+    return x * 2;
+}
+var a;
+alert(a);
+
+Выдаст тело функции, никакой аргумент в функцию не был передан
+
+D.
+
+function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);
+}
+b(1, 2, 3);
+
+
+10 т.к. а - как раз аргумент с индексом 2
+
+E.
+function a() {
+    alert(this);
+}
+a.call(null);
+
+??
